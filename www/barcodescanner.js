@@ -73,8 +73,8 @@
  * @param {Function} errorCallback
  * @param config
  */
-BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config) {
-
+BarcodeScanner.prototype.scan = function (successCallback, errorCallback, force, config) {
+            var forceScan = force || false;
             if (config instanceof Array) {
                 // do nothing
             } else {
@@ -104,7 +104,7 @@ BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config
                 return;
             }
 
-            if (scanInProgress) {
+            if (scanInProgress && !forceScan) {
                 errorCallback('Scan is already in progress');
                 return;
             }
