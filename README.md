@@ -47,7 +47,7 @@ Add the following to your config.xml:
 
 ```
 <!-- add a version here, otherwise PGB will use whatever the latest version of the package on npm is -->
-<plugin name="phonegap-plugin-barcodescanner" />
+<plugin name="@zenput/phonegap-plugin-barcodescanner" />
 ```
 On PhoneGap Build if you're using a version of cordova-android of 4 or less, ensure you're building with gradle:
 ```
